@@ -1,14 +1,15 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, useRef } from 'react';
 
 const DrumPad = (props) => {
     const { id, keypad, src, name, display } = props;
 
+    const sound = useRef();
+
     const handleClick = useCallback(() => {
-        const sound = document.getElementById(keypad);
-        sound.currentTime = 0;
-        sound.play();
+        sound.current.currentTime = 0;
+        sound.current.play();
         display(name);
-    }, [display, name, keypad])
+    }, [display, name])
     
     const onKeyPress = useCallback((e) => {
         if (e.keyCode === id) {
@@ -32,7 +33,7 @@ const DrumPad = (props) => {
         >
             {keypad} <br/>
             {name}
-            <audio className="clip" id={keypad} src={src}></audio>
+            <audio className="clip" src={src} ref={sound}></audio>
         </button>
     );
 }
