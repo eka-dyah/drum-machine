@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import DrumDisplay from '../components/DrumDisplay';
 
 class DrumMachine extends Component {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { drumPadKeys } from '../shared/drumPadKeys';
 import DrumPad from './DrumPad';
 

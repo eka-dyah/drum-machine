@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useRef } from 'react';
+import { useEffect, useCallback, useRef } from 'react';
 
 const DrumPad = (props) => {
     const { id, keypad, src, name, display } = props;
